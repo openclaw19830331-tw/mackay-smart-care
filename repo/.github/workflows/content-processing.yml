@@ -1,0 +1,32 @@
+name: Content Processing Automation
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  process-content:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          # Add your dependency installation commands here
+          # pip install -r requirements.txt
+
+      - name: Run Content Processor
+        run: |
+          python fb_post_automation.py
+        env:
+          # Add required secrets here
+          # FACEBOOK_TOKEN: ${{ secrets.FACEBOOK_TOKEN }}
