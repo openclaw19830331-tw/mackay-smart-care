@@ -8,3 +8,4 @@ echo "Generating site content..."
 node scripts/generate_site.js
 
 echo "Build complete."
+python3 /home/hermes/fetch_care_trends.py
