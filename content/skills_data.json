@@ -1,0 +1,8 @@
+{
+  "last_updated": "2026-04-29",
+  "skills": {
+    "auto_posting": {"status": "stable", "score": 95},
+    "rd_logging": {"status": "iterating", "score": 60},
+    "ai_prediction": {"status": "experimental", "score": 40}
+  }
+}
