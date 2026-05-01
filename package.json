@@ -1,0 +1,9 @@
+{
+  "name": "mackay-smart-care",
+  "version": "1.0.0",
+  "description": "Mackay Smart Long-term Care site",
+  "scripts": {
+    "generate": "node scripts/generate_site.js"
+  },
+  "dependencies": {}
+}
