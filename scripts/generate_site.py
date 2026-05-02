@@ -49,7 +49,31 @@ def generate():
     final_html = final_html.replace('<!-- CONTENT_END -->', f"<div class='hero-section'><h2>📡 趨勢監測頻道</h2>{trends_html}</div>")
     
     # SVG 保持不變
-    svg_skill_tree = """<svg width="200" height="200" viewBox="0 0 200 200" style="display: block; margin: auto;"><polygon points="100,20 180,80 150,170 50,170 20,80" fill="none" stroke="#00f2ff" stroke-width="2"/><polygon points="100,40 160,85 140,150 60,150 40,85" fill="rgba(0, 242, 255, 0.3)" stroke="#00f2ff" stroke-width="1"/><text x="100" y="15" fill="#00f2ff" font-size="10" text-anchor="middle">AI 應用</text><text x="190" y="80" fill="#00f2ff" font-size="10" text-anchor="start">長照知識</text><text x="100" y="190" fill="#00f2ff" font-size="10" text-anchor="middle">自動化</text></svg>"""
+    svg_skill_tree = """    <svg width="250" height="250" viewBox="0 0 250 250" style="display: block; margin: auto;">
+        <!-- 主架構：科技與長照的融合 -->
+        <circle cx="125" cy="125" r="40" fill="none" stroke="#00f2ff" stroke-width="2" stroke-dasharray="4 4"/>
+        <text x="125" y="130" fill="#ffffff" font-size="12" text-anchor="middle" font-weight="bold">馬偕智慧科技</text>
+        
+        <!-- 節點：AI 應用 -->
+        <line x1="125" y1="85" x2="125" y2="40" stroke="#00f2ff" stroke-width="2"/>
+        <circle cx="125" cy="35" r="20" fill="#161b22" stroke="#00f2ff" stroke-width="2"/>
+        <text x="125" y="38" fill="#00f2ff" font-size="10" text-anchor="middle">AI 應用</text>
+        
+        <!-- 節點：長照知識 -->
+        <line x1="165" y1="125" x2="210" y2="125" stroke="#00f2ff" stroke-width="2"/>
+        <circle cx="225" cy="125" r="20" fill="#161b22" stroke="#00f2ff" stroke-width="2"/>
+        <text x="225" y="128" fill="#00f2ff" font-size="10" text-anchor="middle">長照知識</text>
+        
+        <!-- 節點：自動化 -->
+        <line x1="85" y1="125" x2="40" y2="125" stroke="#00f2ff" stroke-width="2"/>
+        <circle cx="25" cy="125" r="20" fill="#161b22" stroke="#00f2ff" stroke-width="2"/>
+        <text x="25" y="128" fill="#00f2ff" font-size="10" text-anchor="middle">自動化</text>
+        
+        <!-- 節點：產學連結 -->
+        <line x1="125" y1="165" x2="125" y2="210" stroke="#00f2ff" stroke-width="2"/>
+        <circle cx="125" cy="225" r="20" fill="#161b22" stroke="#00f2ff" stroke-width="2"/>
+        <text x="125" y="228" fill="#00f2ff" font-size="10" text-anchor="middle">產學連結</text>
+    </svg>"""
     final_html = final_html.replace("<!-- SVG_SKILL_TREE -->", svg_skill_tree)
 
     with open(output_path, 'w', encoding='utf-8') as f:
