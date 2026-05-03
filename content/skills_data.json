@@ -1,5 +1,9 @@
 {
-  "predictive_care": 75,
-  "digital_transformation": 80,
-  "ai_integration": 70
+  "skills": {
+    "AI 跌倒偵測": {"score": 8},
+    "長者情緒分析": {"score": 7},
+    "自動化發文": {"score": 9},
+    "GitHub CI/CD": {"score": 6},
+    "數據視覺化": {"score": 5}
+  }
 }
