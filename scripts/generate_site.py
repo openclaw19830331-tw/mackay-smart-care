@@ -3,16 +3,18 @@ import os
 import re
 
 def parse_md(text):
-    # 提取日期 (格式 date: YYYY-MM-DD)
+    # 提取日期
     date_match = re.search(r'date:\s*(\d{4}-\d{2}-\d{2})', text)
     date_str = date_match.group(1) if date_match else "未標示日期"
     
-    # 移除 YAML 區塊與標籤，只留內容
-    content = re.sub(r'---.*?---', '', text, flags=re.DOTALL)
+    # 移除 YAML 區塊 (date 行)
+    content = re.sub(r'date:.*\n', '', text)
     
-    # 簡單渲染
+    # 簡單渲染 - 保留段落格式，移除截斷限制
     content = re.sub(r'# (.*)', r'<h2>\1</h2>', content)
-    content = content.replace('\n', '<br>')
+    # 將雙換行轉為段落
+    content = content.replace('\n\n', '</p><p>').replace('\n', '<br>')
+    content = f'<p>{content}</p>'
     
     return {
         "date": date_str,
